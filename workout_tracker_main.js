@@ -1,5 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Plus, X, TrendingUp, Calendar, Dumbbell, Edit2, Save, Settings, Download, Upload, Apple } from 'lucide-react';
+const { useState, useEffect } = React;
+
+// Simple emoji icons (no external dependencies)
+const Plus = ({ size = 24 }) => <span style={{ fontSize: size }}>➕</span>;
+const X = ({ size = 24 }) => <span style={{ fontSize: size }}>✕</span>;
+const TrendingUp = ({ size = 24 }) => <span style={{ fontSize: size }}>📈</span>;
+const Calendar = ({ size = 24 }) => <span style={{ fontSize: size }}>📅</span>;
+const Dumbbell = ({ size = 24 }) => <span style={{ fontSize: size }}>💪</span>;
+const Edit2 = ({ size = 24 }) => <span style={{ fontSize: size }}>✏️</span>;
+const Save = ({ size = 24 }) => <span style={{ fontSize: size }}>💾</span>;
+const Settings = ({ size = 24 }) => <span style={{ fontSize: size }}>⚙️</span>;
+const Download = ({ size = 24 }) => <span style={{ fontSize: size }}>📥</span>;
+const Upload = ({ size = 24 }) => <span style={{ fontSize: size }}>📤</span>;
+const Apple = ({ size = 24 }) => <span style={{ fontSize: size }}>🍎</span>;
 
 const EXERCISE_CATEGORIES = {
   legs: { name: 'Legs', color: 'bg-blue-500/20 hover:bg-blue-500/30 border-blue-500', exercises: ['Squat', 'Leg Press', 'Leg Curl', 'Leg Extension', 'Deadlift'] },

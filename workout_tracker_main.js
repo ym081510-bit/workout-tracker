@@ -12,7 +12,7 @@ const EXERCISE_CATEGORIES = {
 
 const getAllPresetExercises = () => Object.values(EXERCISE_CATEGORIES).flatMap(cat => cat.exercises);
 
-export default function WorkoutTracker() {
+function WorkoutTracker() {
   const [view, setView] = useState('record');
   const [workouts, setWorkouts] = useState([]);
   const [nutrition, setNutrition] = useState([]);

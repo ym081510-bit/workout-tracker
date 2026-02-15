@@ -58,6 +58,21 @@ function WorkoutTracker() {
       });
       setExercises([...getAllPresetExercises(), ...custom.map(c => c.name)]);
     }
+    
+    // 自動バックアップリマインダー（7日ごと）
+    const lastBackup = localStorage.getItem('lastBackupDate');
+    const today = new Date().toISOString().split('T')[0];
+    if (!lastBackup || new Date(today) - new Date(lastBackup) > 7 * 24 * 60 * 60 * 1000) {
+      const hasData = stored || storedNutrition;
+      if (hasData) {
+        setTimeout(() => {
+          if (window.confirm('Reminder: It\'s been a while since your last backup. Would you like to backup your data now?')) {
+            exportData();
+            localStorage.setItem('lastBackupDate', today);
+          }
+        }, 2000);
+      }
+    }
   }, []);
 
   useEffect(() => {
